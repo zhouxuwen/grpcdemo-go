@@ -1,0 +1,3 @@
+protoc --go_out=. massage.proto
+
+protoc --go-grpc_out=. massage.proto

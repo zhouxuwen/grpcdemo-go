@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = ".;protobuf";
+
+message Massage {
+  string request = 1;
+}
+
+service HelloService{
+    rpc Hello(Massage) returns (Massage);
+}
+
