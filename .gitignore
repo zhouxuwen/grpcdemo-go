@@ -17,3 +17,6 @@
 # vendor/
 
 .idea
+.DS_Store
+keys/server.key
+keys/server.pem
