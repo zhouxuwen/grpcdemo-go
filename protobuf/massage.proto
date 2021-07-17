@@ -1,12 +1,21 @@
 syntax = "proto3";
 
-option go_package = ".;protobuf";
+package protobuf;
+option go_package = "./;protobuf";
+
+import "google/api/annotations.proto";
 
 message Massage {
-  string request = 1;
+  string massage = 1;
 }
 
 service HelloService{
-    rpc Hello(Massage) returns (Massage);
+    rpc Hello(Massage) returns (Massage) {
+      // http option
+      option (google.api.http) = {
+        post: "/hello"
+        body: "*"
+      };
+    }
 }
 

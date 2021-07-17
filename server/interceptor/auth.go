@@ -22,13 +22,13 @@ func Auth(ctx context.Context) (context.Context, error) {
 
 	// authentication
 	val := md.Get("app_id")
-	if len(val) < 0 {
+	if len(val) <= 0 {
 		return ctx, errors.New("app_id is empty")
 	}
 	appID := val[0]
 
 	val = md.Get("secret_key")
-	if len(val) < 0 {
+	if len(val) <= 0 {
 		return ctx, errors.New("secret_key is empty")
 	}
 	appKey := val[0]

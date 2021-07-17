@@ -12,7 +12,7 @@ type helloService struct {
 }
 
 func (h *helloService) Hello(ctx context.Context, requestMessage *protobuf.Massage) (responseMessage *protobuf.Massage, err error) {
-	msg := "hello " + requestMessage.Request
-	responseMessage = &protobuf.Massage{Request: msg}
+	msg := "hello " + requestMessage.Massage + " !"
+	responseMessage = &protobuf.Massage{Massage: msg}
 	return
 }

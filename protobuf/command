@@ -1,3 +1,5 @@
-protoc --go_out=. massage.proto
+protoc --go_out=. -I=. -I$GOPATH/src/github.com/googleapis/googleapis massage.proto
 
-protoc --go-grpc_out=. massage.proto
+protoc --go-grpc_out=. -I=. -I$GOPATH/src/github.com/googleapis/googleapis massage.proto
+
+protoc --grpc-gateway_out=logtostderr=true:. -I=. -I$GOPATH/src/github.com/googleapis/googleapis *.proto
